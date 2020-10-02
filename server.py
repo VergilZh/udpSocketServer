@@ -15,6 +15,7 @@ def connectionLoop(sock):
    while True:
       data, addr = sock.recvfrom(1024)
       data = str(data)
+      EveryOne = {"cmd":2, "players":[]}
       if addr in clients:
          if 'heartbeat' in data:
             clients[addr]['lastBeat'] = datetime.now()
@@ -27,6 +28,15 @@ def connectionLoop(sock):
             m = json.dumps(message)
             for c in clients:
                sock.sendto(bytes(m,'utf8'), (c[0],c[1]))
+            
+            for c in clients:
+               player = {}
+               player["id"] = str(c)
+               EveryOne["players"].append(player)
+
+            json_Eve = json.dumps(EveryOne)
+            sock.sendto(bytes(json_Eve,'utf8'),(addr[0],addr[1])
+
 
 def cleanClients():
    while True:
