@@ -1,16 +1,13 @@
-# UDP Socket Server Example
-This is a simple UDP socket game server example in python. 
-Currently the server expects a packet with "connect" in order for a client to connect.
-Afterwards, the server will periodically send random colors to all connected clients.
-If a client does not send a heartbeat at least once every 5 seconds. The server drops the client.
+# UDP Socket Server Solution
+This is the solution for the UDP socket server made in Python for the GAME3110 class (Lab #2)
 
 ### Usage
 `cd ~`
 
 `mkdir labs` or `cd labs`
 
-`git clone https://github.com/galalmounir/udpSocketServer.git`
+`git clone https://github.com/galalmounir/udpSocketServerSolution.git`
 
-`cd udpSocketServer`
+`cd udpSocketServerSolution`
 
-`python3 udpSocketServer`
+`python3 server.py`
